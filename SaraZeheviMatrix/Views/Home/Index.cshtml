@@ -1,0 +1,22 @@
+﻿@model SaraZeheviMatrix.Models.User
+<div class="col-md-6 login-form-2">
+    <h3>Login</h3>
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <input type="text" name="UserName" class="form-control" placeholder="Your UserName *" value="" />
+            <p class="note">This will be your username.</p>
+        </div>
+        <div class="form-group">
+            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" />
+            <p class="note">We’ll occasionally send updates about your account to this inbox.</p>
+        </div>
+        <div class="form-group">
+            <input type="password" name="Password" class="form-control" placeholder="Your Password *" value="" />
+            <p class="note">Make sure it's at least 1 characters.</p>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btnSubmit" value="Login" />
+        </div>
+    }
+    </div>

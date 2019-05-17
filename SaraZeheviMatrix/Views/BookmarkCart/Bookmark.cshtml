@@ -1,0 +1,23 @@
+﻿@model SaraZeheviMatrix.Models.User
+
+@{
+    ViewBag.Title = "Bookmark";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<h2>Bookmark</h2>
+<div id="result"></div>
+<script>
+ var user =@Html.Raw(Json.Encode(Model));
+    var parsedBM = [];
+    if (user.Bookmarks != null)
+        user.Bookmarks.forEach((bm) => {
+            parsedBM.push(JSON.parse(bm));
+        });
+    for (var i = 0; i < parsedBM.length; i++) {
+      $('#result').append(`<div class="project">
+                                 <img class="avatar" src="${parsedBM[i].owner.avatar_url}" />
+                                 <span class="repositoryName">${parsedBM[i].name}</span>
+                                 </div>`);
+                }
+
+</script>
